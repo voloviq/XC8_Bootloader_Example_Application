@@ -1,0 +1,375 @@
+
+
+Microchip Technology PIC18 PRO Macro Assembler V1.34 build -361300703 
+                                                                                               Thu Jul 23 17:49:29 2015
+
+Microchip Technology Omniscient Code Generator (PRO mode) build 201502162209
+     1                           	processor	18F26K80
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	pm
+     5                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+     9                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    10  0000                     _LATBbits	set	3978
+    11  0000                     _OSCCONbits	set	4051
+    12  0000                     _OSCTUNEbits	set	3995
+    13  0000                     _TRISBbits	set	3987
+    14                           
+    15 ;;
+    16 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    17 ;;
+    18 ;; *************** function _main *****************
+    19 ;; Defined at:
+    20 ;;		line 87 in file "main.c"
+    21 ;; Parameters:    Size  Location     Type
+    22 ;;  argc            2    0[COMRAM] int 
+    23 ;;  argv            3    2[COMRAM] PTR PTR unsigned char 
+    24 ;; Auto vars:     Size  Location     Type
+    25 ;;  hbeat           4    5[COMRAM] unsigned long 
+    26 ;; Return value:  Size  Location     Type
+    27 ;;                  2    0[COMRAM] int 
+    28 ;; Registers used:
+    29 ;;		wreg, status,2, status,0
+    30 ;; Tracked objects:
+    31 ;;		On entry : 0/0
+    32 ;;		On exit  : 0/0
+    33 ;;		Unchanged: 0/0
+    34 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14
+    35 ;;      Params:         5       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+    36 ;;      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+    37 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+    38 ;;      Totals:         9       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0
+    39 ;;Total ram usage:        9 bytes
+    40 ;; This function calls:
+    41 ;;		Nothing
+    42 ;; This function is called by:
+    43 ;;		Startup code after reset
+    44 ;; This function uses a non-reentrant model
+    45 ;;
+    46                           
+    47                           	psect	text0
+    48  00FF9E                     __ptext0:
+    49                           	opt stack 0
+    50  00FF9E                     _main:
+    51                           	opt stack 31
+    52                           
+    53                           ;main.c: 89: unsigned long int hbeat = 0;
+    54                           
+    55                           ;incstack = 0
+    56  00FF9E  6A06               	clrf	main@hbeat,c
+    57  00FFA0  6A07               	clrf	main@hbeat+1,c
+    58  00FFA2  6A08               	clrf	main@hbeat+2,c
+    59  00FFA4  6A09               	clrf	main@hbeat+3,c
+    60                           
+    61                           ;main.c: 94: OSCCONbits.IRCF2 = 1;
+    62  00FFA6  8CD3               	bsf	4051,6,c	;volatile
+    63                           
+    64                           ;main.c: 95: OSCCONbits.IRCF1 = 1;
+    65  00FFA8  8AD3               	bsf	4051,5,c	;volatile
+    66                           
+    67                           ;main.c: 96: OSCCONbits.IRCF0 = 1;
+    68  00FFAA  88D3               	bsf	4051,4,c	;volatile
+    69                           
+    70                           ;main.c: 99: OSCCONbits.HFIOFS = 1;
+    71  00FFAC  84D3               	bsf	4051,2,c	;volatile
+    72                           
+    73                           ;main.c: 102: OSCTUNEbits.PLLEN = 1;
+    74  00FFAE  8C9B               	bsf	3995,6,c	;volatile
+    75                           
+    76                           ;main.c: 107: TRISBbits.TRISB1 = 0;
+    77  00FFB0  9293               	bcf	3987,1,c	;volatile
+    78  00FFB2                     l613:
+    79                           
+    80                           ;main.c: 111: if(hbeat == 0x17FF){
+    81  00FFB2  2806               	incf	main@hbeat,w,c
+    82  00FFB4  E10D               	bnz	l619
+    83  00FFB6  0E17               	movlw	23
+    84  00FFB8  1807               	xorwf	main@hbeat+1,w,c
+    85  00FFBA  1008               	iorwf	main@hbeat+2,w,c
+    86  00FFBC  1009               	iorwf	main@hbeat+3,w,c
+    87  00FFBE  A4D8               	btfss	status,2,c
+    88  00FFC0  D007               	goto	l619
+    89                           
+    90                           ;main.c: 112: LATBbits.LATB1 = 1;
+    91  00FFC2  828A               	bsf	3978,1,c	;volatile
+    92  00FFC4                     l617:
+    93                           
+    94                           ;main.c: 113: hbeat++;
+    95  00FFC4  2A06               	incf	main@hbeat,f,c
+    96  00FFC6  0E00               	movlw	0
+    97  00FFC8  2207               	addwfc	main@hbeat+1,f,c
+    98  00FFCA  2208               	addwfc	main@hbeat+2,f,c
+    99  00FFCC  2209               	addwfc	main@hbeat+3,f,c
+   100                           
+   101                           ;main.c: 114: }
+   102  00FFCE  D7F1               	goto	l613
+   103  00FFD0                     l619:
+   104                           
+   105                           ;main.c: 115: else if( hbeat == 0x8FFF ){
+   106  00FFD0  2806               	incf	main@hbeat,w,c
+   107  00FFD2  E108               	bnz	l625
+   108  00FFD4  0E8F               	movlw	143
+   109  00FFD6  1807               	xorwf	main@hbeat+1,w,c
+   110  00FFD8  1008               	iorwf	main@hbeat+2,w,c
+   111  00FFDA  1009               	iorwf	main@hbeat+3,w,c
+   112  00FFDC  A4D8               	btfss	status,2,c
+   113  00FFDE  D002               	goto	l625
+   114                           
+   115                           ;main.c: 116: LATBbits.LATB1 = 0;
+   116  00FFE0  928A               	bcf	3978,1,c	;volatile
+   117  00FFE2  D7F0               	goto	l617
+   118  00FFE4                     l625:
+   119                           
+   120                           ;main.c: 119: else if (hbeat == 0x4FFFF){
+   121  00FFE4  2806               	incf	main@hbeat,w,c
+   122  00FFE6  E1EE               	bnz	l617
+   123  00FFE8  2807               	incf	main@hbeat+1,w,c
+   124  00FFEA  E1EC               	bnz	l617
+   125  00FFEC  0E04               	movlw	4
+   126  00FFEE  1808               	xorwf	main@hbeat+2,w,c
+   127  00FFF0  1009               	iorwf	main@hbeat+3,w,c
+   128  00FFF2  A4D8               	btfss	status,2,c
+   129  00FFF4  D7E7               	goto	l617
+   130                           
+   131                           ;main.c: 120: hbeat = 0x00;
+   132  00FFF6  6A06               	clrf	main@hbeat,c
+   133  00FFF8  6A07               	clrf	main@hbeat+1,c
+   134  00FFFA  6A08               	clrf	main@hbeat+2,c
+   135  00FFFC  6A09               	clrf	main@hbeat+3,c
+   136                           
+   137                           ;main.c: 121: }
+   138  00FFFE  D7D9               	goto	l613
+   139  010000                     __end_of_main:
+   140                           	opt stack 0
+   141  0000                     status	equ	0xFD8
+   142                           
+   143                           	psect	cinit
+   144  00FF98                     __pcinit:
+   145                           	opt stack 0
+   146  00FF98                     start_initialization:
+   147                           	opt stack 0
+   148  00FF98                     __initialization:
+   149                           	opt stack 0
+   150  00FF98                     end_of_initialization:
+   151                           	opt stack 0
+   152  00FF98                     __end_of__initialization:
+   153                           	opt stack 0
+   154  00FF98  0100               	movlb	0
+   155  00FF9A  EFCF  F07F         	goto	_main	;jump to C main() function
+   156                           status	equ	0xFD8
+   157                           
+   158                           	psect	cstackCOMRAM
+   159  000001                     __pcstackCOMRAM:
+   160                           	opt stack 0
+   161  000001                     
+   162                           ; 2 bytes @ 0x0
+   163  000001                     	ds	2
+   164  000003                     
+   165                           ; 3 bytes @ 0x2
+   166  000003                     	ds	3
+   167  000006                     main@hbeat:
+   168                           	opt stack 0
+   169                           
+   170                           ; 4 bytes @ 0x5
+   171  000006                     	ds	4
+   172                           status	equ	0xFD8
+   173                           status	equ	0xFD8
+   174                           
+   175                           	psect	rparam
+   176  0000                     status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      9       9
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+    BANK13          256      0       0
+    BANK14           65      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Critical Paths under _main in BANK13
+
+    None.
+
+Critical Paths under _main in BANK14
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 9     4      5      71
+                                              0 COMRAM     9     4      5
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             400      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      9       9       1        9.5%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+ABS                  0      0       0       6        0.0%
+BITBANK1           100      0       0       7        0.0%
+BANK1              100      0       0       8        0.0%
+BITBANK2           100      0       0       9        0.0%
+BANK2              100      0       0      10        0.0%
+BITBANK3           100      0       0      11        0.0%
+BANK3              100      0       0      12        0.0%
+BITBANK4           100      0       0      13        0.0%
+BANK4              100      0       0      14        0.0%
+BITBANK5           100      0       0      15        0.0%
+BANK5              100      0       0      16        0.0%
+BITBANK6           100      0       0      17        0.0%
+BANK6              100      0       0      18        0.0%
+BITBANK7           100      0       0      19        0.0%
+BANK7              100      0       0      20        0.0%
+BITBANK8           100      0       0      21        0.0%
+BANK8              100      0       0      22        0.0%
+BITBANK9           100      0       0      23        0.0%
+BANK9              100      0       0      24        0.0%
+BITBANK10          100      0       0      25        0.0%
+BANK10             100      0       0      26        0.0%
+BITBANK11          100      0       0      27        0.0%
+BANK11             100      0       0      28        0.0%
+BITBANK12          100      0       0      29        0.0%
+BANK12             100      0       0      30        0.0%
+BITBANK13          100      0       0      31        0.0%
+BANK13             100      0       0      32        0.0%
+BITBANK14           41      0       0      33        0.0%
+BANK14              41      0       0      34        0.0%
+BIGRAM             E40      0       0      35        0.0%
+BITSFR_2             0      0       0      40        0.0%
+SFR_2                0      0       0      40        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Thu Jul 23 17:49:29 2015
+
+            __CFG_BORV$1 000000             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
+           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000                      l613 FFB2  
+                    l625 FFE4                      l617 FFC4                      l619 FFD0  
+           __CFG_CPB$OFF 000000             __CFG_CPD$OFF 000000            __CFG_FCMEN$ON 000000  
+                   _main FF9E                     start 1504            __CFG_IESO$OFF 000000  
+          __CFG_MCLRE$ON 000000             ___param_bank 000010                    ?_main 0001  
+          __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000            __CFG_WRT2$OFF 000000  
+          __CFG_WRT3$OFF 000000           __CFG_EBTR0$OFF 000000           __CFG_EBTR1$OFF 000000  
+         __CFG_EBTR2$OFF 000000           __CFG_EBTR3$OFF 000000            __CFG_WRTB$OFF 000000  
+          __CFG_WRTC$OFF 000000            __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000  
+                  status 000FD8          __initialization FF98             __end_of_main 0000  
+                 ??_main 0006            __activetblptr 000000           __CFG_PLLCFG$ON 000000  
+         __CFG_RETEN$OFF 000000          __CFG_BBSIZ$BB2K 000000           __CFG_WDTEN$OFF 000000  
+         __CFG_WDTPS$256 000000           __CFG_XINST$OFF 000000           __CFG_STVREN$ON 000000  
+             __accesstop 0060  __end_of__initialization FF98            ___rparam_used 000001  
+         __pcstackCOMRAM 0001         __CFG_CANMX$PORTB 000000          __CFG_PWRTEN$OFF 000000  
+                __Hparam 0000                  __Lparam 0000                  __pcinit FF98  
+                __ramtop 0F00                  __ptext0 FF9E        __CFG_MSSPMSK$MSK7 000000  
+   end_of_initialization FF98         __CFG_FOSC$INTIO2 000000                _TRISBbits 000F93  
+    start_initialization FF98                 _LATBbits 000F8A         __CFG_SOSCSEL$DIG 000000  
+              main@hbeat 0006                 __Hrparam 0000                 __Lrparam 0000  
+     __CFG_BOREN$SBORDIS 000000            __size_of_main 0062                 main@argc 0001  
+               main@argv 0003      __CFG_INTOSCSEL$HIGH 000000              _OSCTUNEbits 000F9B  
+             _OSCCONbits 000FD3      __CFG_BORPWR$ZPBORMV 000000  
