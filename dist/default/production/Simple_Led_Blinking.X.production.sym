@@ -7,7 +7,7 @@ __Lintentry 0 0 ABS 0
 __CFG_WDTPS$256 0 0 ABS 0
 _main FF9E 0 CODE 0
 ___sp 0 0 STACK 2
-start 1504 0 CODE 0
+start 1104 0 CODE 0
 __Hirdata 0 0 CODE 0
 __Lirdata 0 0 CODE 0
 __HRAM 0 0 ABS 0
@@ -50,8 +50,8 @@ __Hmediumconst 0 0 MEDIUMCONST 0
 __Lmediumconst 0 0 MEDIUMCONST 0
 __Hfarbss 0 0 FARRAM 0
 __Lfarbss 0 0 FARRAM 0
-__Hintcode 1504 0 CODE 0
-__Lintcode 1504 0 CODE 0
+__Hintcode 1104 0 CODE 0
+__Lintcode 1104 0 CODE 0
 __Hfardata 0 0 FARRAM 0
 __Lfardata 0 0 FARRAM 0
 __CFG_MSSPMSK$MSK7 0 0 ABS 0
@@ -71,10 +71,10 @@ __Ltemp 0 0 COMRAM 1
 stacklo 60 0 ABS 0
 __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
-__Hinit 1504 0 CODE 0
-__Linit 1504 0 CODE 0
-__Hintcodelo 1504 0 CODE 0
-__Lintcodelo 1504 0 CODE 0
+__Hinit 1104 0 CODE 0
+__Linit 1104 0 CODE 0
+__Hintcodelo 1104 0 CODE 0
+__Lintcodelo 1104 0 CODE 0
 __Hrbss 0 0 COMRAM 1
 __end_of_main 10000 0 CODE 0
 __Lrbss 0 0 COMRAM 1
@@ -100,8 +100,8 @@ __Hbank4 0 0 ABS 0
 __Lbank4 0 0 ABS 0
 __Hbank5 0 0 ABS 0
 __Lbank5 0 0 ABS 0
-__Hpowerup 1504 0 CODE 0
-__Lpowerup 1504 0 CODE 0
+__Hpowerup 1104 0 CODE 0
+__Lpowerup 1104 0 CODE 0
 __Hbank6 0 0 ABS 0
 __Lbank6 0 0 ABS 0
 __Hbank7 0 0 ABS 0
@@ -175,13 +175,13 @@ __CFG_RETEN$OFF 0 0 ABS 0
 __CFG_WDTEN$OFF 0 0 ABS 0
 ___intlo_sp 0 0 STACK 2
 _OSCCONbits FD3 0 ABS 0
-__Hend_init 1508 0 CODE 0
-__Lend_init 1504 0 CODE 0
+__Hend_init 1108 0 CODE 0
+__Lend_init 1104 0 CODE 0
 __CFG_CP0$OFF 0 0 ABS 0
 __smallconst 0 0 SMALLCONST 0
 __CFG_CP1$OFF 0 0 ABS 0
-__Hreset_vec 1504 0 CODE 0
-__Lreset_vec 1500 0 CODE 0
+__Hreset_vec 1104 0 CODE 0
+__Lreset_vec 1100 0 CODE 0
 __CFG_CP2$OFF 0 0 ABS 0
 __CFG_CP3$OFF 0 0 ABS 0
 __accesstop 60 0 ABS 0
@@ -205,7 +205,7 @@ __initialization FF98 0 CODE 0
 __activetblptr 0 0 ABS 0
 __CFG_FCMEN$ON 0 0 ABS 0
 %segments
-reset_vec 1500 1507 CODE 1500 0
+reset_vec 1100 1107 CODE 1100 0
 config 300000 30000D CONFIG 300000 0
 idloc 200000 200007 IDLOC 200000 0
 cstackCOMRAM 1 9 COMRAM 1 1
@@ -234,7 +234,7 @@ main.c
 119 FFE4 0 CODE 0
 120 FFF6 0 CODE 0
 121 FFFE 0 CODE 0
-C:\Users\MICHA~1\AppData\Local\Temp\s46s.
+C:\Users\MICHA~1\AppData\Local\Temp\s74o.
 1156 FF98 0 CODE 0
 1158 FF98 0 CODE 0
 1161 FF98 0 CODE 0

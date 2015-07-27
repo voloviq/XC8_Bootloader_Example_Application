@@ -1,18 +1,18 @@
 ### HEXMate logfile and output summary ###
 ### Memory Usage ###
  Unused memory ranges:
-  0h - 14FFh
-  1510h - FF8Fh
+  0h - 10FFh
+  1110h - FF8Fh
   10000h - 1FFFFFh
   200008h - 2FFFFFh
   30000Eh - 30003Fh
   
  Filled ROM ranges:
-  1508h - 150Fh
+  1108h - 110Fh
   FF90h - FF97h
   
  dist/default/production\Simple_Led_Blinking.X.production.hex ranges:
-  1500h - 1507h
+  1100h - 1107h
   FF98h - FFFFh
   200000h - 200007h
   300000h - 30000Dh
@@ -30,7 +30,7 @@
   X = Find & delete opcode
   1 = dist/default/production\Simple_Led_Blinking.X.production.hex
 00000000: ----------------------------------------------------------------
-00001500: 11111111FFFFFFFF------------------------------------------------
+00001100: 11111111FFFFFFFF------------------------------------------------
 0000FF80: ----------------FFFFFFFF1111111111111111111111111111111111111111
 0000FFC0: 1111111111111111111111111111111111111111111111111111111111111111
 00200000: 11111111--------------------------------------------------------

@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 PRO Macro Assembler V1.34 build -361300703 
-                                                                                               Thu Jul 23 17:49:29 2015
+                                                                                               Mon Jul 27 21:15:03 2015
 
 Microchip Technology Omniscient Code Generator (PRO mode) build 201502162209
      1                           	processor	18F26K80
@@ -347,13 +347,13 @@ SFR                  0      0       0      40        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Thu Jul 23 17:49:29 2015
+Symbol Table                                                                                   Mon Jul 27 21:15:03 2015
 
             __CFG_BORV$1 000000             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
            __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000                      l613 FFB2  
                     l625 FFE4                      l617 FFC4                      l619 FFD0  
            __CFG_CPB$OFF 000000             __CFG_CPD$OFF 000000            __CFG_FCMEN$ON 000000  
-                   _main FF9E                     start 1504            __CFG_IESO$OFF 000000  
+                   _main FF9E                     start 1104            __CFG_IESO$OFF 000000  
           __CFG_MCLRE$ON 000000             ___param_bank 000010                    ?_main 0001  
           __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000            __CFG_WRT2$OFF 000000  
           __CFG_WRT3$OFF 000000           __CFG_EBTR0$OFF 000000           __CFG_EBTR1$OFF 000000  

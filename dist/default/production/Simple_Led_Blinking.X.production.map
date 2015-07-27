@@ -5,11 +5,11 @@ Linker command line:
 --edf=C:\Program Files\Microchip\xc8\v1.34\dat\en_msgs.txt -cs \
   -h+dist/default/production\Simple_Led_Blinking.X.production.sym \
   --cmf=dist/default/production\Simple_Led_Blinking.X.production.cmf -z \
-  -Q18F26K80 -oC:\Users\MICHA~1\AppData\Local\Temp\s46s.6 \
+  -Q18F26K80 -oC:\Users\MICHA~1\AppData\Local\Temp\s74o.6 \
   -Mdist/default/production/Simple_Led_Blinking.X.production.map -E1 \
-  -ver=XC8 -ASTACK=060h-0e40h -pstack=STACK -ACODE=01500h-0FFFFh \
-  -ACONST=01500h-0FFFFh -ASMALLCONST=01500h-015FFhx235 \
-  -AMEDIUMCONST=01500h-0FFFFh -ACOMRAM=01h-05Fh -AABS1=00h-0E40h \
+  -ver=XC8 -ASTACK=060h-0e40h -pstack=STACK -ACODE=01100h-0FFFFh \
+  -ACONST=01100h-0FFFFh -ASMALLCONST=01100h-011FFhx239 \
+  -AMEDIUMCONST=01100h-0FFFFh -ACOMRAM=01h-05Fh -AABS1=00h-0E40h \
   -ABIGRAM=01h-0E40h -ARAM=060h-0FFh,0100h-01FFhx13,0E00h-0E40h \
   -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
   -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh \
@@ -17,7 +17,7 @@ Linker command line:
   -ABANK9=0900h-09FFh -ABANK10=0A00h-0AFFh -ABANK11=0B00h-0BFFh \
   -ABANK12=0C00h-0CFFh -ABANK13=0D00h-0DFFh -ABANK14=0E00h-0E40h \
   -ASFR=0E41h-0EFFh,0F00h-0F5Fh,0F60h-0FFFh \
-  -preset_vec=01500h,intcode,intcodelo,powerup,init,end_init -pramtop=0F00h \
+  -preset_vec=01100h,intcode,intcodelo,powerup,init,end_init -pramtop=0F00h \
   -psmallconst=SMALLCONST -pmediumconst=MEDIUMCONST -pconst=CONST \
   -AFARRAM=00h-00h -ACONFIG=0300000h-030000Dh -pconfig=CONFIG \
   -AIDLOC=0200000h-0200007h -pidloc=IDLOC -AEEDATA=0F00000h-0F003FFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\MICHA~1\AppData\Local\Temp\s46s.obj \
+  C:\Users\MICHA~1\AppData\Local\Temp\s74o.obj \
   dist/default/production\Simple_Led_Blinking.X.production.obj 
 
 Object code version is 3.11
@@ -39,9 +39,9 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\MICHA~1\AppData\Local\Temp\s46s.obj
-                end_init                           1504     1504        4      A80       0
-                reset_vec                          1500     1500        4      A80       0
+C:\Users\MICHA~1\AppData\Local\Temp\s74o.obj
+                end_init                           1104     1104        4      880       0
+                reset_vec                          1100     1100        4      880       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\Simple_Led_Blinking.X.production.obj
@@ -53,8 +53,8 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                           1504     1504        4         0
-                reset_vec                          1500     1500        4         0
+                end_init                           1104     1104        4         0
+                reset_vec                          1100     1100        4         0
                 cinit                              FF98     FF98        6         0
                 text0                              FF9E     FF9E       62         0
 
@@ -120,7 +120,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 cstackCOMRAM                   000001  000009  00000A         1       1  COMRAM  
-                reset_vec                      001500  000008  001508       A80       0  CODE    
+                reset_vec                      001100  000008  001108       880       0  CODE    
                 cinit                          00FF98  000006  00FF9E      7FCC       0  CODE    
                 text0                          00FF9E  000062  010000      7FCF       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
@@ -146,15 +146,15 @@ UNUSED ADDRESS RANGES
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
         BIGRAM           00000A-000E40              E37
-        CODE             001508-00FF97             EA90
+        CODE             001108-00FF97             EE90
         COMRAM           00000A-00005F               56
-        CONST            001508-00FF97             EA90
+        CONST            001108-00FF97             EE90
         EEDATA           F00000-F003FF              400
         FARRAM           000000-000000                1
-        MEDIUMCONST      001508-00FF97             EA90
+        MEDIUMCONST      001108-00FF97             EE90
         RAM              000060-000E40              100
         SFR              000E41-000FFF               BF
-        SMALLCONST       001508-00FF97              100
+        SMALLCONST       001108-00FF97              100
         STACK            000060-000E40              DE1
 
                                   Symbol Table
@@ -229,17 +229,17 @@ __Hconst                 const        000000
 __HcstackCOMRAM          cstackCOMRAM 000000
 __Hdata                  data         000000
 __Heeprom_data           eeprom_data  000000
-__Hend_init              end_init     001508
+__Hend_init              end_init     001108
 __Hfarbss                farbss       000000
 __Hfardata               fardata      000000
 __Hibigdata              ibigdata     000000
 __Hidata                 idata        000000
 __Hidloc                 idloc        200008
 __Hifardata              ifardata     000000
-__Hinit                  init         001504
-__Hintcode               intcode      001504
+__Hinit                  init         001104
+__Hintcode               intcode      001104
 __Hintcode_body          intcode_body 000000
-__Hintcodelo             intcodelo    001504
+__Hintcodelo             intcodelo    001104
 __Hintentry              intentry     000000
 __Hintret                intret       000000
 __Hintsave_regs          intsave_regs 000000
@@ -249,13 +249,13 @@ __HnvFARRAM              nvFARRAM     000000
 __Hnvbit                 nvbit        000000
 __Hnvrram                nvrram       000000
 __Hparam                 rparam       000000
-__Hpowerup               powerup      001504
+__Hpowerup               powerup      001104
 __Hram                   ram          000000
 __Hramtop                ramtop       000F00
 __Hrbit                  rbit         000000
 __Hrbss                  rbss         000000
 __Hrdata                 rdata        000000
-__Hreset_vec             reset_vec    001504
+__Hreset_vec             reset_vec    001104
 __Hrparam                rparam       000000
 __Hsfr                   sfr          000000
 __Hsmallconst            smallconst   000000
@@ -296,17 +296,17 @@ __Lconst                 const        000000
 __LcstackCOMRAM          cstackCOMRAM 000000
 __Ldata                  data         000000
 __Leeprom_data           eeprom_data  000000
-__Lend_init              end_init     001504
+__Lend_init              end_init     001104
 __Lfarbss                farbss       000000
 __Lfardata               fardata      000000
 __Libigdata              ibigdata     000000
 __Lidata                 idata        000000
 __Lidloc                 idloc        200000
 __Lifardata              ifardata     000000
-__Linit                  init         001504
-__Lintcode               intcode      001504
+__Linit                  init         001104
+__Lintcode               intcode      001104
 __Lintcode_body          intcode_body 000000
-__Lintcodelo             intcodelo    001504
+__Lintcodelo             intcodelo    001104
 __Lintentry              intentry     000000
 __Lintret                intret       000000
 __Lintsave_regs          intsave_regs 000000
@@ -316,13 +316,13 @@ __LnvFARRAM              nvFARRAM     000000
 __Lnvbit                 nvbit        000000
 __Lnvrram                nvrram       000000
 __Lparam                 rparam       000000
-__Lpowerup               powerup      001504
+__Lpowerup               powerup      001104
 __Lram                   ram          000000
 __Lramtop                ramtop       000F00
 __Lrbit                  rbit         000000
 __Lrbss                  rbss         000000
 __Lrdata                 rdata        000000
-__Lreset_vec             reset_vec    001500
+__Lreset_vec             reset_vec    001100
 __Lrparam                rparam       000000
 __Lsfr                   sfr          000000
 __Lsmallconst            smallconst   000000
@@ -363,7 +363,7 @@ intlevel3                text         000000
 main@hbeat               cstackCOMRAM 000006
 stackhi                  (abs)        000E40
 stacklo                  (abs)        000060
-start                    init         001504
+start                    init         001104
 start_initialization     cinit        00FF98
 
 
